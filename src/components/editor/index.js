@@ -1,7 +1,7 @@
-import ComponentLoading from './loading.vue';
+import ComponentLoading from './Loading.vue';
 
 export default () => ({
-    component: import('./editor.vue'),
+    component: import('./Editor.vue'),
     loading: ComponentLoading,
     error: ComponentLoading,
     delay: 0
