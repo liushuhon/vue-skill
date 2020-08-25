@@ -2,6 +2,7 @@
     <div class="home">
         <img alt="Vue logo"
              src="../assets/logo.png">
+             <el-button>aaa</el-button>
         <editor></editor>
     </div>
 </template>
