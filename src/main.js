@@ -2,9 +2,9 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import ElementUI from 'element-ui'
+import plugins from './plugins';
 
-Vue.use(ElementUI)
+Vue.use(plugins);
 Vue.config.productionTip = false;
 
 

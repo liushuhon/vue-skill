@@ -2,8 +2,10 @@
     <div class="home">
         <img alt="Vue logo"
              src="../assets/logo.png">
-             <el-button>aaa</el-button>
         <editor></editor>
+        <el-button size="small"
+                   type="primary">aaa
+        </el-button>
     </div>
 </template>
 
@@ -14,7 +16,7 @@ import editor from '../components/editor';
 export default {
     name: 'Home',
     components: {
-        editor,
+        editor
     }
 };
 </script>

@@ -8,6 +8,7 @@
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
+        "@segma/segma-ui": "^2.3.24",
         "core-js": "^3.6.5",
         "echarts": "^4.8.0",
         "echarts-stat": "^1.1.1",
