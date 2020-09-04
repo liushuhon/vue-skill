@@ -24,6 +24,11 @@ const routes = [
         path: '/page',
         name: 'page',
         component: () => import(/* webpackChunkName: "about" */ '../views/Page.vue')
+    },
+    {
+        path: '/adapter-page',
+        name: 'adapterPage',
+        component: () => import(/* webpackChunkName: "about" */ '../views/AdapterPage.vue')
     }
 ];
 
