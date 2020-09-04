@@ -19,6 +19,11 @@ const routes = [
         path: '/hist-chart',
         name: 'histChart',
         component: () => import(/* webpackChunkName: "about" */ '../components/echarts/HistChart.vue')
+    },
+    {
+        path: '/page',
+        name: 'page',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Page.vue')
     }
 ];
 
