@@ -2,7 +2,6 @@
 <template>
     <div class="card-wrapper"
          :style="style">
-        <img src="../../assets/image.jpg">
     </div>
 </template>
 
@@ -34,10 +33,10 @@ export default {
             return this.coord[1] * this.scale;
         },
         width() {
-            return 440 * this.scale;
+            return 425 * this.scale;
         },
         height() {
-            return 240 * this.scale;
+            return 228 * this.scale;
         }
     }
 };
@@ -46,19 +45,15 @@ export default {
 <style lang="less"
        scoped>
 .card-wrapper {
-    width: 440px;
-    height: 240px;
     position: absolute;
     box-sizing: border-box;
+    background-image: url("../../assets/2_0000.png");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100% 100%;
 
     &:hover {
-        .image1 {
-            opacity: 0;
-        }
-
-        .image2 {
-            opacity: 1;
-        }
+        background-image: url("../../assets/未标题-3.gif");
     }
 
     img {
@@ -67,10 +62,6 @@ export default {
         position: absolute;
         top: 0;
         left: 0;
-    }
-
-    .image2 {
-        opacity: 0;
     }
 }
 </style>

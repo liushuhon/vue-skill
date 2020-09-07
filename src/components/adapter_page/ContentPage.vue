@@ -6,7 +6,8 @@
         <card v-for="(coord, index) in coordArray"
               :key="index"
               :coord="coord"
-              :scale="scale">
+              :scale="scale"
+              :class="{ 'rotate' : coord[2]}">
         </card>
     </div>
 </template>
@@ -41,6 +42,12 @@ export default {
         window.addEventListener('resize', this.resize);
     },
     methods: {
+        /**
+         * 1920 * 1080 是标准尺寸
+         * parentWidth  parentHeight 是当前尺寸
+         * - 如果当前宽高比大于标准，则保持高不变，变化宽度
+         * - 如果当前宽高比低于标准，则保持宽不变，变化高度
+         */
         resize() {
             let parentWidth = this.$refs.topContent.parentNode.offsetWidth;
             let parentHeight = this.$refs.topContent.parentNode.offsetHeight;
@@ -63,7 +70,9 @@ export default {
        scoped>
 .top-content {
     position: relative;
-    transform-origin: 50% 50% 0;
-    background-color: #bbbbbb;
+
+    .rotate {
+        transform: rotateX(180deg);
+    }
 }
 </style>
