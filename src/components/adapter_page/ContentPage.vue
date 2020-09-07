@@ -34,7 +34,7 @@ export default {
             return 1920;
         },
         defaultHeight() {
-            return 1080 * 0.7;
+            return 1080 * (2 / 3) - 64;
         }
     },
     mounted() {
@@ -49,6 +49,9 @@ export default {
          * - 如果当前宽高比低于标准，则保持宽不变，变化高度
          */
         resize() {
+            if (typeof this.$refs.topContent.parentNode === 'undefined'|| typeof this.$refs.topContent.parentNode === 'undefined') {
+                return;
+            }
             let parentWidth = this.$refs.topContent.parentNode.offsetWidth;
             let parentHeight = this.$refs.topContent.parentNode.offsetHeight;
             let parentRate = parentWidth / parentHeight;

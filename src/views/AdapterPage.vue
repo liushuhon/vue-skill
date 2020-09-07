@@ -1,11 +1,14 @@
 <!--AdapterPage-->
 <template>
     <div class="adapter-page">
-        <div ref="topArea"
-             class="top-area">
-            <content-page></content-page>
+        <div class="menu">导航</div>
+        <div class="content-wrapper">
+            <div ref="topArea"
+                 class="top-area">
+                <content-page></content-page>
+            </div>
+            <div class="bottom-area"></div>
         </div>
-        <div class="bottom-area"></div>
     </div>
 </template>
 
@@ -21,8 +24,7 @@ export default {
     // model: {},
     // props: [],
     data() {
-        return {
-        };
+        return {};
     },
     computed: {},
     // watch: {},
@@ -43,20 +45,33 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
+    background: #232633;
 
-    .top-area {
-        height: 70%;
-        width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .content-wrapper {
+        height: calc(100% - 64px);
+
+        .top-area {
+            height: calc(2 * (100% / 3));
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bottom-area {
+            height: calc(100% / 3);
+            width: 100%;
+            background-color: gainsboro;
+        }
     }
 
-    .bottom-area {
-        height: 30%;
-        width: 100%;
-        background-color: gainsboro;
+    .menu {
+        height: 64px;
+        color: #ffffff;
+        line-height: 64px;
+        text-align: left;
     }
+
 }
 </style>

@@ -2,6 +2,24 @@
 <template>
     <div class="card-wrapper"
          :style="style">
+        <div :class="['image-content',{ 'rotate': coord[2]}]">
+            <div class="text-area"
+                 :style="`transform: scale(${scale})`">
+                <div class="rate">50m/s</div>
+                <div class="point">监控点</div>
+                <div class="real-time">实时料流量</div>
+                <div class="real-time-number">
+                    <div class="number"> 12345.678</div>
+                    <div class="text"> t/h</div>
+                </div>
+            </div>
+            <img src="../../assets/bg.png"
+                 :style="`transform: scale(${scale})`">
+        </div>
+        <div class="rate-content"
+             :style="{left:`${212 * scale}px`}">
+            <div :class="['text', { 'rate-rotate': coord[2]}]">50m/s</div>
+        </div>
     </div>
 </template>
 
@@ -52,16 +70,78 @@ export default {
     background-position-y: center;
     background-size: 100% 100%;
 
+    .image-content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-origin: 0 0
+    }
+
+    .rate-content {
+        position: absolute;
+        z-index: 20;
+        bottom: 10px;
+        color: white;
+        left: 166px;
+        background: #ecbf5a;
+        padding: 0 5px;
+        transform: translateX(-50%);
+
+        .rate-rotate {
+            transform: rotateX(180deg);
+        }
+
+    }
+
     &:hover {
         background-image: url("../../assets/未标题-3.gif");
     }
 
     img {
-        width: 100%;
-        height: 100%;
         position: absolute;
-        top: 0;
-        left: 0;
+        left: 5px;
+        top: -5px;
+        transform-origin: 0 0;
+    }
+
+    .rotate {
+        transform: rotateX(180deg) translate(0px, -62%);
+    }
+
+    .text-area {
+        width: 235px;
+        height: 142px;
+        transform-origin: 0 0;
+        position: relative;
+        z-index: 10;
+
+        .rate {
+            line-height: 20px;
+            text-align: right;
+            font-size: 19px;
+        }
+
+        .point {
+            color: #ffffff;
+            font-size: 19px;
+            line-height: 35px;
+        }
+
+        .real-time {
+            font-size: 19px;
+            color: #ffffff;
+            text-align: left;
+            padding-left: 60px;
+            line-height: 45px;
+        }
+
+        .real-time-number {
+            color: #ecbf5a;
+            display: flex;
+            padding-left: 57px;
+            font-size: 24px;
+            font-weight: bold;
+        }
     }
 }
 </style>
