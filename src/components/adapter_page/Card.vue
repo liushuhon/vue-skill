@@ -85,10 +85,10 @@ export default {
         left: 166px;
         background: #ecbf5a;
         padding: 0 5px;
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateZ(0);
 
         .rate-rotate {
-            transform: rotateX(180deg);
+            transform: rotateX(180deg) translateZ(0);
         }
 
     }
