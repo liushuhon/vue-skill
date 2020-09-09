@@ -3,7 +3,7 @@
     <div class="card-wrapper"
          :style="{ left: `${xCoord}px`, top: `${yCoord}px`, transform: `scale(${scale})`}">
         <p style="position: absolute;font-size: 20px">啦啦啦啦啦啦</p>
-        <img src="../../assets/image.jpg">
+        <!--<img src="../../assets/image.jpg">-->
     </div>
 </template>
 

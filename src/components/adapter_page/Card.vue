@@ -2,9 +2,10 @@
 <template>
     <div class="card-wrapper"
          :style="style">
-        <div :class="['image-content',{ 'rotate': coord[2]}]">
+        <div :class="['image-content',{ 'rotate': coord[2]}]"
+             :style="imageContent">
             <div class="text-area"
-                 :style="`transform: scale(${scale})`">
+                 :style="textStyle">
                 <div class="rate">50m/s</div>
                 <div class="point">监控点</div>
                 <div class="real-time">实时料流量</div>
@@ -16,8 +17,7 @@
             <img src="../../assets/bg.png"
                  :style="`transform: scale(${scale})`">
         </div>
-        <div class="rate-content"
-             :style="{left:`${212 * scale}px`}">
+        <div class="rate-content">
             <div :class="['text', { 'rate-rotate': coord[2]}]">50m/s</div>
         </div>
     </div>
@@ -41,8 +41,14 @@ export default {
     },
     // data() {},
     computed: {
+        baseWidth() {
+            return 425;
+        },
+        baseHeight() {
+            return 228;
+        },
         style() {
-            return { left: `${this.xCoord}px`, top: `${this.yCoord}px`, width: `${this.width}px`, height: `${this.height}px` };
+            return { left: `${this.xCoord}px`, top: `${this.yCoord}px`, width: `${Math.floor(this.width)}px`, height: `${Math.floor(this.height)}px` };
         },
         xCoord() {
             return this.coord[0] * this.scale;
@@ -51,10 +57,16 @@ export default {
             return this.coord[1] * this.scale;
         },
         width() {
-            return 425 * this.scale;
+            return this.baseWidth * this.scale;
         },
         height() {
-            return 228 * this.scale;
+            return this.baseHeight * this.scale;
+        },
+        imageContent() {
+            return { width: `${Math.floor(this.width)}px`, height: `${Math.floor(this.height)}px` };
+        },
+        textStyle() {
+            return { transform: `scale(${this.scale})` };
         }
     }
 };
@@ -82,13 +94,13 @@ export default {
         z-index: 20;
         bottom: 10px;
         color: white;
-        left: 166px;
+        left: 50%;
         background: #ecbf5a;
         padding: 0 5px;
-        transform: translateX(-50%) translateZ(0);
+        transform: translateX(-50%);
 
         .rate-rotate {
-            transform: rotateX(180deg) translateZ(0);
+            transform: rotateX(180deg);
         }
 
     }

@@ -75,7 +75,7 @@ export default {
     position: relative;
 
     .rotate {
-        transform: rotateX(180deg) translateZ(0);
+        transform: rotateX(180deg);
     }
 }
 </style>
