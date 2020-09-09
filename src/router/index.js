@@ -1,33 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: Home,
-        redirect: 'adapter-page'
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-    },
-    {
-        path: '/hist-chart',
-        name: 'histChart',
-        component: () => import(/* webpackChunkName: "about" */ '../components/echarts/HistChart.vue')
-    },
-    {
-        path: '/page',
-        name: 'page',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Page.vue')
-    },
-    {
-        path: '/adapter-page',
         name: 'adapterPage',
         component: () => import(/* webpackChunkName: "about" */ '../views/AdapterPage.vue')
     }
