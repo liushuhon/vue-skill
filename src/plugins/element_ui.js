@@ -1,4 +1,3 @@
-import '@segma/segma-ui'; // 引入样式文件
 import {
     Pagination,
     Dialog,
