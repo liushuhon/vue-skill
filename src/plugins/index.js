@@ -1,8 +1,8 @@
-import elementUI from './element_ui';
+import antDesign from './directives/ant_design';
 import directive from './directives';
 
 const plugins = [
-    elementUI,
+    antDesign,
     directive
 ];
 

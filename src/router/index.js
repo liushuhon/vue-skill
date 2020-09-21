@@ -5,9 +5,14 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/',
+        path: '/adapterPage',
         name: 'adapterPage',
         component: () => import(/* webpackChunkName: "about" */ '../views/AdapterPage.vue')
+    },
+    {
+        path: '/',
+        name: 'helloWorld',
+        component: () => import(/* webpackChunkName: "about" */ '../components/HelloWorld.vue')
     }
 ];
 

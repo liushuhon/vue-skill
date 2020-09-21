@@ -2,7 +2,7 @@ import { segmaLoading, inputNumber } from '@segma/segma-directives';
 
 const directives = [
     segmaLoading,
-    inputNumber
+    inputNumber,
 ];
 
 export default {
