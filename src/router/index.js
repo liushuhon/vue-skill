@@ -5,9 +5,14 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/',
+        path: '/test',
         name: 'adapterPage',
         component: () => import(/* webpackChunkName: "about" */ '../views/AdapterPage.vue')
+    },
+    {
+        path: '/',
+        name: 'VideoTest',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Test.vue')
     }
 ];
 
