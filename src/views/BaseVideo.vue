@@ -14,15 +14,17 @@
             <!--播放失败-->
             <div v-if="!playStatus"
                  class="play-failed">
-                <img src="../assets/image/xj.png"
-                     alt=""
-                     class="failed-img">
-                <span class="failed-text">播放失败</span>
+                <div class="failed-content">
+                    <img src="../assets/image/fail.png"
+                         alt=""
+                         class="failed-img">
+                    <span class="failed-text">播放失败</span>
+                </div>
             </div>
-            <!--遮罩-->
+            <!--loading-->
             <div v-if="videoLoading"
                  v-segma-loading="videoLoading"
-                 segma-loading-background="white"
+                 :segma-loading-background="bgColor"
                  class="videos-loading">
             </div>
         </div>
@@ -40,7 +42,8 @@ export default {
             //播放状态
             playStatus: true,
             //视频加载中
-            videoLoading: true
+            videoLoading: true,
+            bgColor: '#ffffff'
         };
     },
     methods: {
@@ -53,7 +56,6 @@ export default {
             ];
             this.videoLoading = loadingStatusArr.includes(status);
             this.playStatus = !errorStatusArr.includes(status);
-            console.log(errorState)
         }
     }
 };
@@ -61,21 +63,6 @@ export default {
 
 <style lang="less"
        scoped>
-
-.base-video-wrapper {
-    width: 100%;
-    height: 100%;
-}
-
-//视频加载中
-.videos-loading {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-}
 
 .video-body {
     position: relative;
@@ -86,6 +73,21 @@ export default {
     justify-content: center;
     align-items: center;
 
+    .base-video-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+
+    //视频加载中
+    .videos-loading {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+    }
+
     .play-failed {
         display: flex;
         position: absolute;
@@ -93,26 +95,28 @@ export default {
         right: 0;
         bottom: 0;
         left: 0;
-        font-size: 22px;
-        font-weight: bold;
         background-color: #ffffff;
         user-select: none;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        font-size: 24px;
+        color: #aaafb5;
 
-        .failed-img {
-            margin-bottom: 20px;
-            width: 120px;
-            height: 94px;
-            margin-top: -10px;
+
+        .failed-content {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
             transform: scale(0.6);
+            flex-direction: column;
+
         }
 
-        .failed-text {
-            position: absolute;
-            top: 50%;
-            transform: scale(0.6) translateY(100%);
+        .failed-img {
+            margin-bottom: 10px;
         }
     }
 }

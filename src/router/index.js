@@ -12,7 +12,7 @@ const routes = [
     {
         path: '/',
         name: 'VideoTest',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Test.vue')
+        component: () => import(/* webpackChunkName: "about" */ '../views/BaseVideo.vue')
     }
 ];
 
