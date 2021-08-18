@@ -1,4 +1,6 @@
 const webpack = require('webpack');
+const path = require('path');
+const resolve = dir => path.join(__dirname, dir);
 
 module.exports = {
     lintOnSave: false,
@@ -14,5 +16,7 @@ module.exports = {
                 'window.jQuery': 'jquery'
             }
         ]);
+        config.resolve.alias
+            .set('public', resolve('public'));
     }
 };

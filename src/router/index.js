@@ -13,6 +13,21 @@ const routes = [
         path: '/',
         name: 'VideoTest',
         component: () => import(/* webpackChunkName: "about" */ '../views/BaseVideo.vue')
+    },
+    {
+        path: '/test-build-com',
+        name: 'VideoTest',
+        component: () => import(/* webpackChunkName: "about" */ '../views/BuildView.vue')
+    },
+    {
+        path: '/ace_editor',
+        name: 'ace',
+        component: () => import(/* webpackChunkName: "about" */ '../views/AceTest.vue')
+    },
+    {
+        path: '/time-line',
+        name: 'timeline',
+        component: () => import(/* webpackChunkName: "about" */ '../views/TimeLinePage.vue')
     }
 ];
 
