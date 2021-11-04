@@ -99,8 +99,10 @@ export default {
             g_mousedownCursor: false,
             //mouseup返回时间
             returnTime: null,
+            // 用于滚轮放大缩小事件
             zoom: 12,
             start_timestamp: 0,
+            // 时间轴容纳的总小时数
             hours_per_ruler: 12,
             redrawFlag: false,
             clickNum: 0
